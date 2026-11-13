@@ -6,9 +6,11 @@ import {
   Globe,
   LayoutDashboard,
   Menu,
+  PlayCircle,
   Sliders,
   X,
 } from "lucide-react";
+import { AnimationPlayerPage } from "./components/AnimationPlayerPage";
 import { CalculationWalkthroughPage } from "./components/CalculationWalkthroughPage";
 import { DashboardPage, type AppPage } from "./components/DashboardPage";
 import { FinalRankingPage } from "./components/FinalRankingPage";
@@ -108,6 +110,7 @@ export function App() {
     { key: "dashboard", label: t.nav.dashboard, icon: LayoutDashboard },
     { key: "builder", label: t.nav.modelBuilder, icon: Sliders },
     { key: "walkthrough", label: t.nav.calculation, icon: Calculator },
+    { key: "animation", label: t.nav.animation, icon: PlayCircle },
     { key: "ranking", label: t.nav.ranking, icon: Award },
     { key: "reports", label: t.nav.reports, icon: FileDown },
   ];
@@ -288,6 +291,16 @@ export function App() {
 
           {page === "walkthrough" && (
             <CalculationWalkthroughPage
+              model={model}
+              result={evaluation.result}
+              lang={lang}
+              decimals={decimals}
+              modelRevision={modelRevision}
+            />
+          )}
+
+          {page === "animation" && (
+            <AnimationPlayerPage
               model={model}
               result={evaluation.result}
               lang={lang}

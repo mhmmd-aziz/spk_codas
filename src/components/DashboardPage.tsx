@@ -20,7 +20,13 @@ import type {
 import { TRANSLATIONS } from "../i18n/translations";
 import { CriterionBadge } from "./CriterionBadge";
 
-export type AppPage = "dashboard" | "builder" | "walkthrough" | "ranking" | "reports";
+export type AppPage =
+  | "dashboard"
+  | "builder"
+  | "walkthrough"
+  | "animation"
+  | "ranking"
+  | "reports";
 
 interface DashboardPageProps {
   model: CodasModel;

@@ -7,6 +7,7 @@ export interface TranslationDictionary {
     dashboard: string;
     modelBuilder: string;
     calculation: string;
+    animation: string;
     ranking: string;
     reports: string;
   };
@@ -185,6 +186,39 @@ export interface TranslationDictionary {
     formulaGuaranteeTitle: string;
     formulaGuaranteeBody: string;
   };
+  animation: {
+    heading: string;
+    subheading: string;
+    invalidBlocked: string;
+    statusPlaying: string;
+    statusPaused: string;
+    play: string;
+    pause: string;
+    replay: string;
+    prevFrame: string;
+    nextFrame: string;
+    restart: string;
+    speedLabel: string;
+    stepCounter: string;
+    timelineAriaLabel: string;
+    activeOperationLabel: string;
+    operandContrastHint: string;
+    targetProgressHint: string;
+    sourceMatrixXTitle: string;
+    targetMatrixNTitle: string;
+    sourceWeightsAndNTitle: string;
+    targetMatrixRTitle: string;
+    sourceColumnRTitle: string;
+    targetVectorNSTitle: string;
+    sourceRowRAndNSTitle: string;
+    targetDistancesTitle: string;
+    sourcePairETTitle: string;
+    targetMatrixRelTitle: string;
+    sourceRowRelTitle: string;
+    targetScoreHTitle: string;
+    sourceUnsortedHTitle: string;
+    targetRankingTitle: string;
+  };
 }
 
 export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
@@ -195,6 +229,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       dashboard: "Dasbor",
       modelBuilder: "Pengaturan Model",
       calculation: "Proses Perhitungan",
+      animation: "Simulasi Animasi",
       ranking: "Hasil Perangkingan",
       reports: "Laporan & Ekspor",
     },
@@ -473,6 +508,41 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       formulaGuaranteeBody:
         "Setiap sel turunan pada lembar Normalized, Weighted, Distances, Relative, dan Ranking berisi rumus Excel dimulai dengan '='. Perubahan struktur jumlah kriteria/alternatif tetap dilakukan dengan mengekspor ulang dari aplikasi web ini.",
     },
+    animation: {
+      heading: "Simulasi Animasi Kalkulasi CODAS",
+      subheading:
+        "Putar proses perhitungan secara bertahap. Elemen sumber yang sedang dioperasikan (A dan B) serta sel hasil (=) ditandai dengan kontras tinggi hingga perangkingan selesai.",
+      invalidBlocked:
+        "Simulasi animasi tidak dapat dijalankan sebelum kesalahan validasi model diperbaiki.",
+      statusPlaying: "BERJALAN",
+      statusPaused: "JEDA",
+      play: "Putar",
+      pause: "Jeda",
+      replay: "Putar Ulang",
+      prevFrame: "Mundur",
+      nextFrame: "Maju",
+      restart: "Awal",
+      speedLabel: "Kecepatan",
+      stepCounter: "Langkah {current} / {total}",
+      timelineAriaLabel: "Garis waktu simulasi perhitungan CODAS",
+      activeOperationLabel: "Operasi Aktif Saat Ini",
+      operandContrastHint: "Operan A (hitam-amber) dan Operan B (amber) adalah angka yang sedang dihitung.",
+      targetProgressHint: "Sel hijau menunjukkan tempat hasil perhitungan baru masuk.",
+      sourceMatrixXTitle: "Sumber: Matriks Keputusan (X) & Min/Max Kolom",
+      targetMatrixNTitle: "Hasil: Matriks Normalisasi (N)",
+      sourceWeightsAndNTitle: "Sumber: Bobot (w_j) & Matriks Normalisasi (N)",
+      targetMatrixRTitle: "Hasil: Matriks Ternormalisasi Terbobot (R)",
+      sourceColumnRTitle: "Sumber: Kolom Matriks Terbobot (R)",
+      targetVectorNSTitle: "Hasil: Solusi Ideal Negatif (NS)",
+      sourceRowRAndNSTitle: "Sumber: Baris Alternatif pada (R) & Vektor (NS)",
+      targetDistancesTitle: "Hasil: Jarak Euclidean (E_i) & Taxicab (T_i)",
+      sourcePairETTitle: "Sumber: Pasangan Jarak (E_i, T_i) vs (E_k, T_k)",
+      targetMatrixRelTitle: "Hasil: Matriks Penilaian Relatif (h_ik)",
+      sourceRowRelTitle: "Sumber: Baris Matriks Penilaian Relatif (h_ik)",
+      targetScoreHTitle: "Hasil: Skor Penilaian Agregat (H_i)",
+      sourceUnsortedHTitle: "Sumber: Rekap E_i, T_i & Skor H_i",
+      targetRankingTitle: "Hasil: Penetapan Peringkat Akhir",
+    },
   },
   en: {
     appTitle: "CODAS Decision Support System",
@@ -481,6 +551,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       dashboard: "Dashboard",
       modelBuilder: "Model Builder",
       calculation: "Calculation Process",
+      animation: "Live Animation",
       ranking: "Final Ranking",
       reports: "Reports & Export",
     },
@@ -758,6 +829,41 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       formulaGuaranteeTitle: "Formula Workbook Scope",
       formulaGuaranteeBody:
         "Every dependent cell in Normalized, Weighted, Distances, Relative, and Ranking uses an Excel formula beginning with '='. To add or remove criteria/alternatives structurally, edit the web model and export a fresh workbook.",
+    },
+    animation: {
+      heading: "Live CODAS Calculation Animation",
+      subheading:
+        "Press Play to step through the calculation live. Active source operands (A and B) and the newly computed target cell (=) are contrasted and marked all the way to the final ranking.",
+      invalidBlocked:
+        "Live animation playback is unavailable until model validation errors are fixed.",
+      statusPlaying: "PLAYING",
+      statusPaused: "PAUSED",
+      play: "Play",
+      pause: "Pause",
+      replay: "Replay",
+      prevFrame: "Prev",
+      nextFrame: "Next",
+      restart: "Start",
+      speedLabel: "Speed",
+      stepCounter: "Frame {current} / {total}",
+      timelineAriaLabel: "CODAS calculation animation timeline",
+      activeOperationLabel: "Active Operation",
+      operandContrastHint: "Operand A (black-amber) and Operand B (amber) mark the numbers being combined.",
+      targetProgressHint: "The green cell marks where the new calculation result lands.",
+      sourceMatrixXTitle: "Source: Decision Matrix (X) & Column Min/Max",
+      targetMatrixNTitle: "Output: Normalized Matrix (N)",
+      sourceWeightsAndNTitle: "Source: Weights (w_j) & Normalized Matrix (N)",
+      targetMatrixRTitle: "Output: Weighted Normalized Matrix (R)",
+      sourceColumnRTitle: "Source: Column of Weighted Matrix (R)",
+      targetVectorNSTitle: "Output: Negative-Ideal Solution (NS)",
+      sourceRowRAndNSTitle: "Source: Row of (R) & Vector (NS)",
+      targetDistancesTitle: "Output: Euclidean (E_i) & Taxicab (T_i) Distances",
+      sourcePairETTitle: "Source: Pair (E_i, T_i) vs (E_k, T_k)",
+      targetMatrixRelTitle: "Output: Relative Assessment Matrix (h_ik)",
+      sourceRowRelTitle: "Source: Row of Relative Assessment Matrix (h_ik)",
+      targetScoreHTitle: "Output: Aggregate Assessment Score (H_i)",
+      sourceUnsortedHTitle: "Source: E_i, T_i & Assessment Scores (H_i)",
+      targetRankingTitle: "Output: Final Ranking Assignment",
     },
   },
 };
